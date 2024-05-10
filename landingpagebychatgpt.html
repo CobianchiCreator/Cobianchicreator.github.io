@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência de Marketing - Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            border: 1px solid #fdfdfd;
+            border-radius: 5px;
+            font-family: 'WhatsApp', sans-serif;
+            color: #000; /* Alterei a cor do texto para preto */
+        }
+        input[type="submit"] {
+            background-color: #25D366; /* Cor do botão do WhatsApp */
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #128C7E; /* Cor do botão do WhatsApp ao passar o mouse */
+        }
+        .banner {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .description {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="C:\Users\julio\Downloads\Black And Blue Modern Marketing Outdoor Banner (560 x 315 px).png" alt="Banner da Agência de Marketing">
+        </div>
+        <h1>Entre em contato conosco pelo WhatsApp!</h1>
+        <form id="leadForm">
+            <input type="text" id="name" placeholder="Seu nome" required><br>
+            <input type="text" id="phone" placeholder="Seu número de WhatsApp" required><br>
+            <input type="submit" value="Enviar">
+        </form>
+        <div class="description">
+            <h2>Consultor Cobianchi - Estratégia de Engajamento e Vendas</h2>
+            <p>O Consultor Cobianchi é especialista em estratégias de marketing digital e vendas. Com anos de experiência no mercado, ele desenvolveu métodos comprovados para aumentar o engajamento e impulsionar as vendas de seus clientes. Entre em contato conosco para saber mais!</p>
+        </div>
+        
+        <div class="video-container">
+            <iframe width="580" height="315" src="https://www.youtube.com/embed/sxwOlHN6jHE" frameborder="0" allowfullscreen></iframe>
+        </div>
+       
+    </div>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+
+            // Adicione seu número do WhatsApp aqui
+            var whatsappNumber = 'SEU-NUMERO-DO-WHATSAPP';
+            
+            var message = encodeURIComponent('Olá, meu nome é ' + name + '. Estou interessado em seus serviços de marketing.');
+
+            // Gere o link do WhatsApp com a mensagem
+            var whatsappLink = 'https://api.whatsapp.com/send?phone=5511945719614' + whatsappNumber + '&text=' + message;
+
+            // Redireciona para o link do WhatsApp
+            window.location.href = whatsappLink;
+        });
+    </script>
+</body>
+</html>
+
+
+
+
